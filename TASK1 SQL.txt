@@ -1,0 +1,30 @@
+CREATE DATABASE library;
+USE library;
+create table bookdetalse(bookid int PRIMARY key,
+bookname varchar(50) unique ,
+Authors varchar(50),
+Availablecopy int,
+PublicationYear int
+);
+
+insert into bookdetalse
+values(1,'c++','ali',4,1990),
+(2,'c#','ali',1,1990),
+(3,'js','ali',3,2000),
+(4,'sql','ali',0,1890),
+(5,'c','ali',0,1880);
+
+select*from bookdetalse;
+select bookname,Authors from bookdetalse;
+
+select min (Availablecopy) as lowestNumberofAvalabilCopy from bookdetalse;
+select max (Availablecopy) as maxNumberofAvalabilCopy from bookdetalse;
+
+select avg (PublicationYear) as AveragePublicationyear from bookdetalse;
+select sum (Availablecopy) as NumberofAvalabilCopy from bookdetalse;
+
+select bookname from bookdetalse where Availablecopy=0 ;
+
+ALTER TABLE bookdetalse ADD email varchar(100),Phone_Number int;
+ALTER TABLE bookdetalse DROP COLUMN Authors ;
+SELECT*FROM bookdetalse;
